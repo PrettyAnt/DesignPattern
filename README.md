@@ -1,5 +1,7 @@
 # DesignPattern
 设计模式(DesignPattern)的一些总结
+**测试程序入口**
+[传送门](https://github.com/PrettyAnt/DesignPattern/blob/master/image/enter.png)
 
 ## 策略模式
 定义了算法族，分别封装起来，让他们之间可以互相替换，此模式让算法的变化独立于使用算法的客户
