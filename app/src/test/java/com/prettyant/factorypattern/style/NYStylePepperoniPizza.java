@@ -1,4 +1,4 @@
-package com.prettyant.factorypattern.categry;
+package com.prettyant.factorypattern.style;
 
 /**
  * @author ChenYu
@@ -8,5 +8,5 @@ package com.prettyant.factorypattern.categry;
  * PackageName : com.example.prettyant.model
  * describle :
  */
-public class GreekPizza extends Pizza {
+public class NYStylePepperoniPizza extends Pizza {
 }

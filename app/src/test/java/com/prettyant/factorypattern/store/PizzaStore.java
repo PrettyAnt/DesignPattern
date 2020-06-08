@@ -1,6 +1,6 @@
 package com.prettyant.factorypattern.store;
 
-import com.prettyant.factorypattern.categry.Pizza;
+import com.prettyant.factorypattern.style.Pizza;
 import com.prettyant.factorypattern.factory.SimplePizzaFactory;
 
 /**
@@ -12,14 +12,11 @@ import com.prettyant.factorypattern.factory.SimplePizzaFactory;
  * describle :
  */
 public abstract class PizzaStore {
-    SimplePizzaFactory factory;
 
-    public PizzaStore(SimplePizzaFactory factory) {
-        this.factory = factory;
+    public PizzaStore() {
     }
 
-    public Pizza orderPizza(String type) {
-//        Pizza pizza = factory.createPizza(type);
+    public final Pizza orderPizza(String type) {
         Pizza pizza = createPizza(type);
         pizza.prepare(type);
         pizza.bake(type);
@@ -27,5 +24,5 @@ public abstract class PizzaStore {
         pizza.box(type);
         return pizza;
     }
-    abstract Pizza createPizza(String type);
+   protected abstract Pizza createPizza(String type);
 }

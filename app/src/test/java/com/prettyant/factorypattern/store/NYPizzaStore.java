@@ -1,11 +1,11 @@
 package com.prettyant.factorypattern.store;
 
-import com.prettyant.factorypattern.categry.CheesePizza;
-import com.prettyant.factorypattern.categry.ClamPizza;
-import com.prettyant.factorypattern.categry.GreekPizza;
-import com.prettyant.factorypattern.categry.PepperoniPizza;
-import com.prettyant.factorypattern.categry.Pizza;
-import com.prettyant.factorypattern.categry.VeggiePizza;
+import com.prettyant.factorypattern.style.NYStyleClamPizza;
+import com.prettyant.factorypattern.style.NYStyleGreekPizza;
+import com.prettyant.factorypattern.style.NYStyleCheesePizza;
+import com.prettyant.factorypattern.style.NYStylePepperoniPizza;
+import com.prettyant.factorypattern.style.Pizza;
+import com.prettyant.factorypattern.style.NYStyleVeggiePizza;
 import com.prettyant.factorypattern.factory.SimplePizzaFactory;
 
 /**
@@ -17,24 +17,24 @@ import com.prettyant.factorypattern.factory.SimplePizzaFactory;
  * describle :
  */
 public class NYPizzaStore extends PizzaStore {
-    public NYPizzaStore(SimplePizzaFactory factory) {
-        super(factory);
+    public NYPizzaStore() {
     }
 
     @Override
-    Pizza createPizza(String type) {
+   protected Pizza createPizza(String type) {
         Pizza pizza = null;
         if (type.equals("cheese")) {
-            pizza = new CheesePizza();
+            pizza = new NYStyleCheesePizza();
         } else if (type.equals("greek")) {
-            pizza = new GreekPizza();
+            pizza = new NYStyleGreekPizza();
         } else if (type.equals("pepperoni")) {
-            pizza = new PepperoniPizza();
+            pizza = new NYStylePepperoniPizza();
         } else if (type.equals("clam")) {
-            pizza = new ClamPizza();
+            pizza = new NYStyleClamPizza();
         } else if (type.equals("veggie")) {
-            pizza = new VeggiePizza();
+            pizza = new NYStyleVeggiePizza();
         }
         return pizza;
     }
+
 }
